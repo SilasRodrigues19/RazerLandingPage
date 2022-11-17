@@ -1,0 +1,252 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    --cta: #66B933;
+    --bg: #272b34;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 30px 50px 50px;
+    background: var(--bg);
+}
+
+nav {
+    width: 100%;
+    color: #fff;
+}
+
+nav .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 10px;
+    color: #ffffffb3;
+    cursor: pointer;
+}
+
+.search {
+    color: #ffffffb3;
+}
+
+.search .fa {
+    margin-left: 30px;
+}
+
+.main_content {
+    user-select: none;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.main_content h1 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-size: 20vw;
+    color: #6c7984b3;
+}
+
+.main_content .item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+}
+
+.main_content .item + .item {
+    align-items: center;
+}
+
+.main_content .shadow {
+    position: relative;
+}
+
+.main_content .shadow img {
+    pointer-events: none;
+    transform: rotate(10deg);
+    perspective: 300px;
+}
+
+.main_content .shadow::before {
+    content: '';
+    width: 50%;
+    height: 8px;
+    border-radius: 80%;
+    position: absolute;
+    right: 0;
+    bottom: 3vw;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, .7);
+}
+
+.main_content .shadow::after {
+    content: '';
+    width: 50%;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, .7);
+    transform: rotate(-7deg);
+}
+
+.main_content .shadow img {
+    width: 30vw;
+}
+
+.main_content .products_details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 5vw;
+    color: #fff;
+}
+
+.products_details h2 {
+    font-size: 50px;
+}
+
+.products_details p {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.products_details .price {
+    color: var(--cta);
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+.products_details .price span {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.products_details .cta_group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.cta_group .btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ffffff1a;
+    color: #ffffffe6;
+    cursor: pointer;
+    transition: color .3s cubic-bezier(.77, 0, .175, 1);
+    overflow: hidden;
+}
+
+.cta_group .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: var(--cta);
+    transition: width .3s cubic-bezier(.77, 0, .175, 1);
+    z-index: -1;
+}
+
+.cta_group .btn.active {
+    background: var(--cta);
+    color: #fff;
+    border: none;
+}
+
+.cta_group .btn:hover {
+    color: #fff;
+    border: none;
+} 
+
+.cta_group .btn:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    color: #ffffff4d;
+    font-size: 12px;
+}
+
+.footer .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .social .fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ffffff4d;
+    color: #ffffff4d;
+    cursor: pointer;
+    margin-left: 15px;
+}
