@@ -7,28 +7,60 @@
 	box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  padding-right: 5px;
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background: $cta;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($cta, $alpha: .5);
+}
+
+
 body {
+    overflow: overlay;
+    overflow-x: hidden;
+    overflow-y: hidden;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     @include max-vh-w-100;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    @include max-vh-w-100;
     padding: 30px 50px 50px;
     background: $background;
-    
+    @include max-vh-w-100;    
     nav {
       @include isFlexCenterDynamicContent(space-between, row);
       width: 100%;
       color: $light;
       
       .logo {
+        display: block;
         font-size: pxToRem(30);
         text-transform: uppercase;
+
+        img {
+          margin-bottom: -.2rem;
+          width: 1.6rem;
+        }
+
       }
 
     }
@@ -42,6 +74,12 @@ body {
           margin-left: pxToRem(15);
           padding: pxToRem(10);
           color: rgba($light, $alpha: .7);
+          cursor: pointer;
+
+          &:hover {
+            color: $cta;
+          }
+
         }
         
       }
@@ -51,6 +89,14 @@ body {
 
         .fa {
           margin: 0 pxToRem(15);
+          transition: transform .3s ease-in-out;
+
+          &:hover {
+            color: $cta;
+            cursor: pointer;
+            scale: 1.1
+          }
+
         }
 
       }
@@ -76,8 +122,7 @@ body {
 
       .item {
         position: relative;
-        @include isFlexCenterDynamicItems(flex-start);
-        width: 50%;
+        @include isFlexCenterDynamicItems(center);
         height: 100%;
         z-index: 2;
 
@@ -89,9 +134,14 @@ body {
           position: relative;
 
           img {
-            pointer-events: none;
             transform: rotate(10deg);
             width: 30vw;
+            z-index: 4;
+
+            &:hover {
+              transform: rotate(9.8deg);
+            }
+
           }
 
           &::before, &::after {
@@ -99,6 +149,9 @@ body {
             position: absolute;
             width: 50%;
             box-shadow: 0 30px 30px rgba($color: #000, $alpha: .7);
+            &:hover {
+              box-shadow: none;
+            }
           }
 
           &::before {
@@ -174,7 +227,7 @@ body {
               width: 0;
               height: 100%;
               background: $cta;
-              transition: width .3s cubic-bezier(.77, 0, .175, 1);
+              transition: width .6s cubic-bezier(.77, 0, .175, 1);
               z-index: -1;
             }
 
@@ -221,10 +274,16 @@ body {
         width: pxToRem(50);
         height: pxToRem(50);
         border-radius: pxToRem(50);
-        border: 1px solid rgba($light, $alpha: .3);;
+        border: 1px solid rgba($light, $alpha: .3);
         color: rgba($light, $alpha: .3);;
         cursor: pointer;
         margin-left: pxToRem(15);
+
+        &:hover {
+          color: rgba($cta, $alpha: .3);
+          border: 1px solid rgba($cta, $alpha: .3);;
+        }
+
       }
 
     }
