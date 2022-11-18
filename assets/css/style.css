@@ -20,6 +20,7 @@
 }
 
 body {
+  background: rgba(108, 121, 132, 0.7019607843);
   overflow: overlay;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -260,4 +261,30 @@ img {
 .footer .social .fab:hover {
   color: rgba(102, 185, 51, 0.3);
   border: 1px solid rgba(102, 185, 51, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+  .container nav {
+    display: none;
+  }
+  .container .main_content {
+    flex-direction: column-reverse;
+  }
+  .container .main_content .products_details {
+    padding: 0;
+    margin: 2rem 0;
+  }
+  .container .main_content .products_details h2 {
+    font-size: 1.2rem;
+  }
+  .container .main_content .products_details .cta_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.3rem;
+  }
+  .footer .social {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

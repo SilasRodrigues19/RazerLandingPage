@@ -2,9 +2,9 @@
 @import './_functions.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -24,13 +24,14 @@
 
 
 body {
-    overflow: overlay;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    @include max-vh-w-100;
+  background: #6c7984b3;
+  overflow: overlay;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  @include max-vh-w-100;
 }
 
 img {
@@ -41,251 +42,296 @@ img {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 50px 50px;
-    background: $background;
-    @include max-vh-w-100;    
-    nav {
-      @include isFlexCenterDynamicContent(space-between, row);
-      width: 100%;
-      color: $light;
-      
-      .logo {
-        display: block;
-        font-size: pxToRem(30);
-        text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px 50px;
+  background: $background;
+  @include max-vh-w-100;
+
+  nav {
+    @include isFlexCenterDynamicContent(space-between, row);
+    width: 100%;
+    color: $light;
+
+    .logo {
+      display: block;
+      font-size: pxToRem(30);
+      text-transform: uppercase;
+
+      img {
+        margin-bottom: -.2rem;
+        width: 1.6rem;
+      }
+
+    }
+
+  }
+
+  ul {
+    @include isFlexCenter;
+    list-style: none;
+
+    li {
+      font-size: pxToRem(14);
+      margin-left: pxToRem(15);
+      padding: pxToRem(10);
+      color: rgba($light, $alpha: .7);
+      cursor: pointer;
+
+      &:hover {
+        color: $cta;
+      }
+
+    }
+
+  }
+
+  .search {
+    color: rgba($light, $alpha: .7);
+
+    .fa {
+      margin: 0 pxToRem(15);
+      transition: transform .3s ease-in-out;
+
+      &:hover {
+        color: $cta;
+        cursor: pointer;
+        scale: 1.1
+      }
+
+    }
+
+  }
+
+  .main_content {
+    @include isFlexCenter;
+    user-select: none;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding-top: pxToRem(50);
+
+    h1 {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-transform: uppercase;
+      font-size: 20vw;
+      color: #6c7984b3;
+    }
+
+    .item {
+      position: relative;
+      @include isFlexCenterDynamicItems(center);
+      height: 100%;
+      z-index: 2;
+
+      +.item {
+        align-items: center;
+      }
+
+      .shadow {
+        position: relative;
 
         img {
-          margin-bottom: -.2rem;
-          width: 1.6rem;
+          transform: rotate(10deg);
+          width: 30vw;
+          z-index: 4;
+
+          &:hover {
+            transform: rotate(9.8deg);
+          }
+
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 50%;
+          box-shadow: 0 30px 30px rgba($color: #000, $alpha: .7);
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
+        &::before {
+          height: 8px;
+          border-radius: 80%;
+          right: 0;
+          bottom: 3vw;
+        }
+
+        &::after {
+          height: 6px;
+          border-radius: 50%;
+          left: 0;
+          bottom: 15px;
+          transform: rotate(-7deg);
         }
 
       }
 
     }
 
-    ul {
-        @include isFlexCenter;
-        list-style: none;
+    .products_details {
+      @include isFlexCenterDynamicAxios(flex-start, flex-start, column);
+      padding-left: 5vw;
+      color: $light;
 
-        li {
-          font-size: pxToRem(14);
-          margin-left: pxToRem(15);
-          padding: pxToRem(10);
-          color: rgba($light, $alpha: .7);
-          cursor: pointer;
-
-          &:hover {
-            color: $cta;
-          }
-
-        }
-        
+      h2 {
+        font-size: pxToRem(50);
       }
 
-    .search {
-          color: rgba($light, $alpha: .7);
+      p {
+        font-size: pxToRem(25);
+        margin-top: pxToRem(5);
+      }
 
-        .fa {
-          margin: 0 pxToRem(15);
-          transition: transform .3s ease-in-out;
+      .price {
+        color: $cta;
+        font-size: pxToRem(30);
+        margin-top: pxToRem(25);
 
-          &:hover {
-            color: $cta;
-            cursor: pointer;
-            scale: 1.1
-          }
-
+        span {
+          font-size: pxToRem(20);
+          display: inline-block;
+          vertical-align: top;
         }
 
       }
 
-    .main_content {
-      @include isFlexCenter;
-      user-select: none;
-      position: relative;
-      width: 90%;
-      height: 100%;
-      margin: auto;
-      padding-top: pxToRem(50);
+      .cta_group {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        width: 100%;
+        margin-top: pxToRem(35);
 
-      h1 {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        text-transform: uppercase;
-        font-size: 20vw;
-        color: #6c7984b3;
-      }
-
-      .item {
-        position: relative;
-        @include isFlexCenterDynamicItems(center);
-        height: 100%;
-        z-index: 2;
-
-        + .item {
-          align-items: center;
-        }
-
-        .shadow {
+        .btn {
           position: relative;
-
-          img {
-            transform: rotate(10deg);
-            width: 30vw;
-            z-index: 4;
-
-            &:hover {
-              transform: rotate(9.8deg);
-            }
-
-          }
-
-          &::before, &::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            box-shadow: 0 30px 30px rgba($color: #000, $alpha: .7);
-            &:hover {
-              box-shadow: none;
-            }
-          }
-
-          &::before {
-            height: 8px;
-            border-radius: 80%;
-            right: 0;
-            bottom: 3vw;
-          }
+          @include isFlexCenter;
+          width: pxToRem(150);
+          height: pxToRem(50);
+          border-radius: pxToRem(50);
+          border: 1px solid rgba($light, $alpha: .1);
+          color: rgba($light, $alpha: .9);
+          ;
+          cursor: pointer;
+          transition: color .3s cubic-bezier(.77, 0, .175, 1);
+          overflow: hidden;
 
           &::after {
-            height: 6px;
-            border-radius: 50%;
-            left: 0;
-            bottom: 15px;
-            transform: rotate(-7deg);
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background: $cta;
+            transition: width .6s cubic-bezier(.77, 0, .175, 1);
+            z-index: -1;
           }
 
-        }
-
-      }
-
-      .products_details {
-        @include isFlexCenterDynamicAxios(flex-start, flex-start, column);
-        padding-left: 5vw;
-        color: $light;
-
-        h2 {
-          font-size: pxToRem(50);
-        }
-
-        p {
-          font-size: pxToRem(25);
-          margin-top: pxToRem(5);
-        }
-
-        .price {
-          color: $cta;
-          font-size: pxToRem(30);
-          margin-top: pxToRem(25);
-
-          span {
-            font-size: pxToRem(20);
-            display: inline-block;
-            vertical-align: top;
+          &.active {
+            background: $cta;
+            color: $light;
+            border: none;
           }
 
-        }
-
-        .cta_group {
-          display: flex;
-          justify-content: flex-start;
-          gap: 2rem;
-          width: 100%;
-          margin-top: pxToRem(35);
-
-          .btn {
-            position: relative;
-            @include isFlexCenter;
-            width: pxToRem(150);
-            height: pxToRem(50);
-            border-radius: pxToRem(50);
-            border: 1px solid rgba($light, $alpha: .1);
-            color: rgba($light, $alpha: .9);;
-            cursor: pointer;
-            transition: color .3s cubic-bezier(.77, 0, .175, 1);
-            overflow: hidden;
+          &:hover {
+            color: $light;
+            border: none;
 
             &::after {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 0;
-              height: 100%;
-              background: $cta;
-              transition: width .6s cubic-bezier(.77, 0, .175, 1);
-              z-index: -1;
-            }
-
-            &.active {
-              background: $cta;
-              color: $light;
-              border: none;
-            }
-
-            &:hover {
-              color: $light;
-              border: none;
-
-              &::after {
-                width: 100%;
-                left: 0;
-              }
-
+              width: 100%;
+              left: 0;
             }
 
           }
 
         }
-        
+
       }
 
     }
+
+  }
 
 }
 
 .footer {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: auto;
-    color: rgba($light, $alpha: .3);
-    font-size: pxToRem(12);
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  color: rgba($light, $alpha: .3);
+  font-size: pxToRem(12);
 
-    .social {
-      @include isFlexCenterDynamicContent(space-between);
+  .social {
+    @include isFlexCenterDynamicContent(space-between);
 
-      .fab {
-        @include isFlexCenter;
-        font-size: 14px;
-        width: pxToRem(50);
-        height: pxToRem(50);
-        border-radius: pxToRem(50);
-        border: 1px solid rgba($light, $alpha: .3);
-        color: rgba($light, $alpha: .3);;
-        cursor: pointer;
-        margin-left: pxToRem(15);
+    .fab {
+      @include isFlexCenter;
+      font-size: 14px;
+      width: pxToRem(50);
+      height: pxToRem(50);
+      border-radius: pxToRem(50);
+      border: 1px solid rgba($light, $alpha: .3);
+      color: rgba($light, $alpha: .3);
+      ;
+      cursor: pointer;
+      margin-left: pxToRem(15);
 
-        &:hover {
-          color: rgba($cta, $alpha: .3);
-          border: 1px solid rgba($cta, $alpha: .3);;
+      &:hover {
+        color: rgba($cta, $alpha: .3);
+        border: 1px solid rgba($cta, $alpha: .3);
+        ;
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+
+    nav {
+      display: none;
+    }
+
+    .main_content {
+      flex-direction: column-reverse;
+
+      .products_details {
+        padding: 0;
+        margin: 2rem 0;
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        .cta_group {
+          @include isFlexCenterDynamicContent(space-between);
+          gap: .3rem;
         }
 
       }
 
     }
+
+  }
+
+  .footer {
+
+    .social {
+      width: 100%;
+    }
+
+  }
 
 }
