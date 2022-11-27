@@ -139,6 +139,7 @@ img {
         img {
           transform: rotate(10deg);
           width: 20rem;
+          height: auto;
           z-index: 4;
 
           &:hover {
@@ -321,6 +322,7 @@ img {
 
           img {
             width: 10rem;
+            height: auto;
           }
 
         }
