@@ -138,7 +138,7 @@ img {
 
         img {
           transform: rotate(10deg);
-          width: 30vw;
+          width: 20rem;
           z-index: 4;
 
           &:hover {
@@ -314,6 +314,18 @@ img {
 
     .main_content {
       flex-direction: column-reverse;
+
+      .item {
+
+        .shadow {
+
+          img {
+            width: 10rem;
+          }
+
+        }
+
+      }
 
       .products_details {
         padding: 0;
