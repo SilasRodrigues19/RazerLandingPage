@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="./logo.svg" />
     <title>Product Landing Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="./assets/css/main.css" as="style">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
 
     <main class="container">
@@ -27,8 +29,8 @@
                 <li>Contact</li>
             </ul>
             <div class="search">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-shopping-basket"></i>
+                <img class="fa fa-search" src="./assets/icons/search.svg" alt="">
+                <img class="fa fa-shopping-basket" src="./assets/icons/shop.svg" alt="">
             </div>
         </nav>
         <div class="main_content">
@@ -43,7 +45,7 @@
                         <div class="btn active">Shop Now</div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="item">
                 <div class="shadow">
@@ -54,18 +56,17 @@
         <div class="footer">
             <div class="social">
                 <p>Copyright &copy; 2022</p>
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
+                <div class="icon facebook-icon"></div>
+                <div class="icon instagram-icon"></div>
             </div>
         </div>
     </main>
-    
 
-
-    
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./assets/js/script.js"></script>
 
 </body>
+
 </html>

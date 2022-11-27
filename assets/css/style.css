@@ -85,6 +85,7 @@ img {
   color: rgba(255, 255, 255, 0.7);
 }
 .container .search .fa {
+  width: 1.2rem;
   margin: 0 0.9375rem;
   transition: transform 0.3s ease-in-out;
 }
@@ -245,7 +246,15 @@ img {
   align-items: center;
   flex-direction: row;
 }
-.footer .social .fab {
+.footer .social .facebook-icon {
+  background: url("https://api.iconify.design/grommet-icons/facebook-option.svg?color=%23ffffff4d") no-repeat center center/contain;
+  background-size: 1.25rem;
+}
+.footer .social .instagram-icon {
+  background: url("https://api.iconify.design/line-md/instagram.svg?color=%23ffffff4d") no-repeat center center/contain;
+  background-size: 1.25rem;
+}
+.footer .social .icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,9 +267,8 @@ img {
   cursor: pointer;
   margin-left: 0.9375rem;
 }
-.footer .social .fab:hover {
-  color: rgba(102, 185, 51, 0.3);
-  border: 1px solid rgba(102, 185, 51, 0.3);
+.footer .social .icon:hover {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 @media screen and (max-width: 600px) {

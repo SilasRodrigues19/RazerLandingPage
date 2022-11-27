@@ -90,6 +90,7 @@ img {
     color: rgba($light, $alpha: .7);
 
     .fa {
+      width: 1.2rem;
       margin: 0 pxToRem(15);
       transition: transform .3s ease-in-out;
 
@@ -273,7 +274,17 @@ img {
   .social {
     @include isFlexCenterDynamicContent(space-between);
 
-    .fab {
+    .facebook-icon {
+      background: url('https://api.iconify.design/grommet-icons/facebook-option.svg?color=%23ffffff4d') no-repeat center center / contain;
+      background-size: pxToRem(20);
+    }
+
+    .instagram-icon {
+      background: url('https://api.iconify.design/line-md/instagram.svg?color=%23ffffff4d') no-repeat center center / contain;
+      background-size: pxToRem(20);
+    }
+
+    .icon {
       @include isFlexCenter;
       font-size: 14px;
       width: pxToRem(50);
@@ -281,14 +292,11 @@ img {
       border-radius: pxToRem(50);
       border: 1px solid rgba($light, $alpha: .3);
       color: rgba($light, $alpha: .3);
-      ;
       cursor: pointer;
       margin-left: pxToRem(15);
 
       &:hover {
-        color: rgba($cta, $alpha: .3);
-        border: 1px solid rgba($cta, $alpha: .3);
-        ;
+        border-color: rgba($light, $alpha: .1);
       }
 
     }
