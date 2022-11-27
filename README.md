@@ -110,4 +110,4 @@ Project Link: [https://github.com/SilasRodrigues19/razer-lp](https://github.com/
 [license-url]: https://github.com/SilasRodrigues19/razer-lp/blob/master/LICENSE
 
 <br><hr>
-[🔼 Back to top](#Razer-landind-page)
+[🔼 Back to top](#Razer-landing-page)
